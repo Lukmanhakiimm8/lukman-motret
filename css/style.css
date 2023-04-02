@@ -1,0 +1,432 @@
+:root {
+  --primary: #7d7d7d;
+  --bg: #141414;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+  /* min-height: 5000px; */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(20, 20, 20, 0.8);
+  border-bottom: 1px solid #3c3b3b;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+.navbar .navbar-logo {
+  font-size: 25px;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+}
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 20px;
+  margin: 0 1rem;
+}
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+}
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+  transition: 0.2s linear;
+}
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+  transition: 0.2s linear;
+}
+#menu {
+  display: none;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/header-bgb.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(20, 20, 20, 1) 20%,
+    rgba(125, 125, 125, 0) 80%
+  );
+}
+
+.hero .content {
+  padding: 1.4rem 4%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 5em;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(20, 20, 20, 0.5);
+  line-height: 1.2;
+}
+
+.hero .content h1 span {
+  color: #e8e2e2;
+}
+
+.hero .content p {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  line-height: 2rem;
+  text-shadow: 1px 1px 3px rgba(20, 20, 20, 3);
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(20, 20, 20, 0.5);
+  background-color: #585858;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(20, 20, 20, 5);
+}
+
+/* Tentang Saya */
+
+.tentang,
+.porto,
+.kontak {
+  padding: 8rem 7% 1.4rem;
+}
+
+.tentang h2,
+.porto h2,
+.kontak h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.tentang h2 span,
+.porto h2 span,
+.kontak h2 span {
+  color: var(--primary);
+}
+
+.tentang .row {
+  display: flex;
+}
+
+.tentang .row .tentangsaya-img {
+  flex: 1 1 45rem;
+}
+
+.tentang .row .tentangsaya-img img {
+  width: 100%;
+}
+
+.tentang .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.tentang .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.tentang .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+/* Portofolio */
+.porto h2,
+.kontak h2 {
+  margin-bottom: 1rem;
+}
+.porto p,
+.kontak p {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+.porto .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  justify-content: center;
+}
+
+.porto .row .porto-card {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.porto .row .porto-card img {
+  width: 80%;
+}
+
+.porto .row .porto-card .porto-card-title {
+  margin-top: 1rem;
+}
+
+/* Kontak */
+
+.kontak .row {
+  display: flex;
+  margin-top: 2rem;
+  background-color: #222222;
+}
+
+.kontak .row .map {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.kontak .row form {
+  flex: 1 1 45rem;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.kontak .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--bg);
+  border: 1px solid #eee;
+  padding-left: 2rem;
+}
+
+.kontak .row form .input-group input {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.2rem;
+  background: none;
+  color: #fff;
+}
+
+.kontak .row form .btn {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: var(--primary);
+  cursor: pointer;
+}
+
+/* Footer */
+
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 1rem 0 3rem;
+  margin-top: 3rem;
+}
+
+footer .socials {
+  padding: 1rem 0;
+}
+
+footer .socials a {
+  color: #fff;
+  margin: 0.5rem;
+}
+
+footer .socials a:hover,
+footer .links a:hover {
+  color: var(--bg);
+  transition: 0.2s;
+}
+
+footer .links {
+  margin-bottom: 1.4rem;
+}
+
+footer .links a {
+  color: #fff;
+  padding: 0.1rem 1rem;
+}
+
+footer .credit {
+  font-size: 0.8rem;
+}
+
+footer .credit a {
+  color: var(--bg);
+  font-weight: 700;
+}
+
+/* Media Querries */
+
+/* Dekstop */
+@media only screen and (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 880px) {
+  html {
+    font-size: 65%;
+  }
+
+  #menu {
+    display: inline-block;
+    position: absolute;
+    right: 90%;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: 100%;
+    background-color: #fff;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.4s;
+  }
+
+  .navbar {
+    position: absolute;
+  }
+
+  .navbar .navbar-logo {
+    position: relative;
+    left: 5%;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 65%;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 3rem;
+    font-size: 2rem;
+  }
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .tentang .row {
+    flex-wrap: wrap;
+  }
+
+  .tentang .row .tentangsaya-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .tentang .row .content {
+    padding: 0;
+  }
+
+  .tentang .row .content h3 {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .porto p {
+    font-size: 1.2rem;
+  }
+
+  .kontak .row {
+    flex-wrap: wrap;
+  }
+
+  .kontak .row .map {
+    height: 30rem;
+  }
+
+  .kontak .row form {
+    padding-top: 0;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 55%;
+  }
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: 100%;
+    background-color: #fff;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.4s;
+  }
+  .navbar .navbar-nav.active {
+    right: 40%;
+  }
+
+  .tentang .row .content h3 {
+    text-align: center;
+  }
+}
